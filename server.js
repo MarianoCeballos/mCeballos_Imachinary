@@ -1,16 +1,18 @@
 const express = require('express');
-const movie = require('./routes/movie.js');
+const movies = require('./src/routes/movie.js');
 const server = express();
-const role = require('./routes/role.js');
-const people = require('./routes/person.js');
+const roles = require('./src/routes/role.js');
+const people = require('./src/routes/person.js');
+const { conn } = require('./src/db.js');
+const { seedDb } = require('./src/controllers/AllControllers.js');
 
-const { conn } = require('./db');
 server.use(express.json());
-server.use('/movies', movie);
-server.use('/roles', role);
+server.use('/movies', movies);
+server.use('/roles', roles);
 server.use('/people', people);
-server.get('/', (req, res) => {
-    res.json('Stop');
+server.get('/', async (req, res) => {
+    const seedDatatabase = await seedDb();
+    seedDatatabase ? res.json('DB SEEDED') : res.json('DB ALREADY WITH DATA');
 });
 const PORT = 3000;
 try {

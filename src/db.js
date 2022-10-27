@@ -40,15 +40,6 @@ try {
     PersonRoleMovie.belongsTo(Movie, { foreignKey: 'movieId' });
     Role.hasMany(PersonRoleMovie, { foreignKey: 'roleId' });
     PersonRoleMovie.belongsTo(Role, { foreignKey: 'roleId' });
-
-    // const model = Pokemon; // yourSequelizeModel
-    // for (let assoc of Object.keys(model.associations)) {
-    //   for (let accessor of Object.keys(model.associations[assoc].accessors)) {
-    //     console.log(
-    //       model.name + '.' + model.associations[assoc].accessors[accessor] + '()'
-    //     );
-    //   }
-    // }
 } catch (error) {
     console.log(error);
 }

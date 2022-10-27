@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const { getPerson } = require('../Controllers/AllControllers');
+const { getPerson } = require('../controllers/AllControllers');
 
 const router = Router();
 
 router.get('/', async (req, res) => {
-    const { role } = req.query;
+    const { name, role, movie } = req.query;
     try {
-        const person = await getPerson(role);
+        const person = await getPerson(name, role, movie);
         res.send(person);
     } catch (error) {
         console.log(error);

@@ -33,8 +33,10 @@ Para usar este repo:
     ```
 
 ### Este diagrama muestra la resolución final a la que llegué para resolver el ejercicio:
+![image](https://user-images.githubusercontent.com/98489048/198385627-f67c821e-1a66-42be-b6e7-a80d9c934c93.png)
 
-> ![image](https://user-images.githubusercontent.com/98489048/198365568-0fb1c9cd-e21c-4df5-b74e-43525ad0e8ac.png)
+
+
 
 ## Explicación:
 

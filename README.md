@@ -6,7 +6,7 @@ Para usar este repo:
     ```
     npm i
     ```
--   Crear archivo .env y agregar las variables que están en .env.default y rellenar con sus respectivos valores
+-   Crear archivo .env y agregar las siguientes variables y rellenar con sus respectivos valores
 
     ```
     DB_PASSWORD=

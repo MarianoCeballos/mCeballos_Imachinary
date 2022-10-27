@@ -84,6 +84,8 @@ Esta función no crea relaciones, así que eso hay que hacerlo manual una vez qu
 ![image](https://user-images.githubusercontent.com/98489048/198374221-65450f9b-cbc7-4890-99e7-1654c94b115e.png)
 
 ### Árbol de carpetas:
+![image](https://user-images.githubusercontent.com/98489048/198378863-ddb165d6-41ec-4daa-a863-619dcfdd6df0.png)
+
 
 -   server.js → creación del servidor y donde iniciamos el sync de sequelize
 
@@ -92,8 +94,10 @@ Esta función no crea relaciones, así que eso hay que hacerlo manual una vez qu
 -   db.js → lógica de sequelize para capturar los modelos basándose en los archivos creados en la carpeta models. Además, acá se encuentran las relaciones entre tablas.
 -   models → carpeta de modelos de db
 -   controllers → carpeta con funcionalidades y lógica de conexión con la DB y el traspaso de información a las rutas para ser devueltas al usuario.
--   routes → carpeta con rutas separadas por archivos
-    ![image](https://user-images.githubusercontent.com/98489048/198378863-ddb165d6-41ec-4daa-a863-619dcfdd6df0.png)
+-   routes → carpeta con rutas separadas por archivos.
+
+
+
 
 _Ansío poder aprender y conocer si hay formas más eficientes de resolverlo._
 

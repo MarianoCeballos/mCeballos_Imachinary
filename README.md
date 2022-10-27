@@ -1,6 +1,4 @@
-# iMachinary_assesstment
-
-### Hecho por Mariano Ceballos para iMachinary
+# API muy básica para el assessment de iMachinary
 
 Para usar este repo:
 
@@ -8,7 +6,7 @@ Para usar este repo:
     ```
     npm i
     ```
--   Crear archivo .env y agregar las variables que estan en .env.default y rellenar con sus respectivos valores
+-   Crear archivo .env y agregar las variables que están en .env.default y rellenar con sus respectivos valores
 
     ```
     DB_PASSWORD=
@@ -40,9 +38,9 @@ Para usar este repo:
 
 ## Explicación:
 
-Además de mucha investigación, la razón por la que llegué a esta conclusión fue porque las tablas **Roles**, **People** y **Movies** no se pueden relacionar entre sí si no hay una tabla intermedia. La cuestión está en que por ejemplo para asociar una _foreing key_ de una **person** con alguna **movie** necesitaríamos tener duplicada esa **movie** tantas veces como personas trabajen en ella, lo cual es erroneo.
+Además de mucha investigación, la razón por la que llegué a esta conclusión fue porque las tablas **Roles**, **People** y **Movies** no se pueden relacionar entre sí si no hay una tabla intermedia. La cuestión está en que, por ejemplo, para asociar una _foreing key_ de una **person** con alguna **movie** necesitaríamos tener duplicada esa **movie** tantas veces como personas trabajen en ella, lo cual es erróneo.
 Así mismo también pasaría con los **roles** y las **personas**.
-Por ende, para poder hacer un "vínculo" entre todas las tablas usé una intermediaria la cual maneja el flujo de información entre todas.
+Por ende, para poder hacer un "vínculo" entre todas las tablas, usé una tabla intermediaria, la cual maneja el flujo de información entre todas.
 
 ## Formato de las tablas y algunos datos en ellas:
 
@@ -64,7 +62,7 @@ Tabla PersonRoleMovies (relacionada)
 
 ## Algunas cuestiones que tuve que tener en cuenta:
 
-Independientemente de la tabla que estemos consultando (**Roles**, **People** o **Movies**) tendremos que incluir SIEMPRE la tabla principal (**PersonRoleMovie**) ya que sin ella no podremos obtener los respectivos datos extras para esa tabla. - Solución: incluí querys en las rutas de person y movie además de lógica para filtrar.
+Independientemente de la tabla que estemos consultando (**Roles**, **People** o **Movies**) tendremos que incluir SIEMPRE la tabla principal (**PersonRoleMovie**), ya que sin ella no podremos obtener los respectivos datos extras para esa tabla. - Solución: incluí querys en las rutas de person y movie además de lógica para filtrar.
 
 > Por ejemplo: en el caso de la tabla **Movies** podremos filtrar por roles, personas de todas o una pelicula en específico. Basándonos los datos de las tablas mostradas anteriormente una consulta de este tipo
 > _"/movie?role=actor&person=lola&title=lotr"_ traería la siguiente información:
@@ -79,24 +77,24 @@ Independientemente de la tabla que estemos consultando (**Roles**, **People** o 
 
 ## Extras:
 
-Si ingresamos en la ruta "/", se dispara una función que llena o no (dependiendo de si ya tiene datos) la DB. Esto lo hice para facilitarme el proceso de llenado de datos en la DB ya que no hice una ruta POST (debería haberlo hecho) y quedó por si a alguien le facilita la vida. 👌
+Si ingresamos en la ruta "/", se dispara una función que llena o no (dependiendo de si ya tiene datos) la DB. Esto lo hice para facilitarme el proceso de llenado de datos en la DB, ya que no hice una ruta POST (debería haberlo hecho) y quedó por si a alguien le facilita la vida. 👌
 
-Esta función no crea relaciones así que eso hay que hacerlo manual una vez que los datos estén en nuestra DB.
+Esta función no crea relaciones, así que eso hay que hacerlo manual una vez que los datos estén en nuestra DB.
 
 ![image](https://user-images.githubusercontent.com/98489048/198374221-65450f9b-cbc7-4890-99e7-1654c94b115e.png)
 
-### Arbol de carpetas:
+### Árbol de carpetas:
 
--   server.js -> creación del servidor y donde iniciamos el sync de sequelize
+-   server.js → creación del servidor y donde iniciamos el sync de sequelize
 
--   src -> carpeta principal
+-   src → carpeta principal
 
--   db.js -> lógica de sequelize para capturar los modelos basandose en los archivos creados en la carpeta models. Además acá se encuentran las relaciones entre tablas.
--   models -> carpeta de modelos de db
--   controllers -> carpeta con funcionalidades y lógica de conexion con la DB y el transpaso de información a las rutas para ser devueltas al usuario.
--   routes -> carpeta con rutas separadas por archivos
+-   db.js → lógica de sequelize para capturar los modelos basándose en los archivos creados en la carpeta models. Además, acá se encuentran las relaciones entre tablas.
+-   models → carpeta de modelos de db
+-   controllers → carpeta con funcionalidades y lógica de conexión con la DB y el traspaso de información a las rutas para ser devueltas al usuario.
+-   routes → carpeta con rutas separadas por archivos
     ![image](https://user-images.githubusercontent.com/98489048/198378863-ddb165d6-41ec-4daa-a863-619dcfdd6df0.png)
 
 _Ansío poder aprender y conocer si hay formas más eficientes de resolverlo._
 
-Gracias por tu tiempo!
+¡Gracias por tu tiempo!
